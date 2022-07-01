@@ -33,7 +33,7 @@ exports.Ignite = async function (opts) {
             // Non-CLI Services
             if (!haluka.isCLI()) {
                 
-                if (opts.httpConfig == 'haluka:config') opts.httpConfig = config('config.http')
+                if (opts.httpConfig == 'haluka:config') opts.httpConfig = config('http')
 
                 let r = setupRouter(haluka)
 
