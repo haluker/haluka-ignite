@@ -1,0 +1,16 @@
+{
+  "name": "haluka-ignite",
+  "version": "1.0.0",
+  "description": "Haluka Project Igniter",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Robin Panta",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@haluka/core": "git+https://github.com/halukajs/core.git",
+    "@haluka/routing": "git+https://github.com/halukajs/routing.git"
+  }
+}
