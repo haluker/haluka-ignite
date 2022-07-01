@@ -23,7 +23,7 @@ exports.Ignite = async function (opts) {
             // Loads all the event handlers from applciation
             eventLoader(haluka.eventsPath())
 
-            let appData = loadAppData(haluka.path(opts.appData) || haluka.appPath('app.js'))
+            let appData = loadAppData(opts.appData ? haluka.path(opts.appData) : haluka.appPath('app.js'))
             haluka.boot(appData)
 
             // Database
