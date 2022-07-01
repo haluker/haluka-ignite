@@ -46,11 +46,9 @@ exports.Ignite = async function (opts) {
                     require('./lib/middleware')(http, opts.httpConfig)
 
                 if (env('AUTH')) {
-                    if (!opts.UserModel) {
-                        throw new Error('User Model not provided in options.')
+                    if (opts.UserModel) {
+                        haluka.register('UserModel', () => opts.UserModel)
                     }
-
-                    haluka.register('UserModel', () => opts.UserModel)
                     let passport = haluka.use('Auth')
                     http.use(passport.initialize())
                     http.use(passport.session())
