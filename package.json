@@ -4,13 +4,30 @@
   "description": "Haluka Project Igniter",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "NODE_ENV=test && jest --coverage"
+  },
+  "bin": {
+    "ignite": "./bin/ignite.js"
   },
   "author": "Robin Panta",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "@haluka/core": "git+https://github.com/halukajs/core.git",
-    "@haluka/routing": "git+https://github.com/halukajs/routing.git"
+    "@haluka/routing": "git+https://github.com/halukajs/routing.git",
+    "bl": "^5.0.0",
+    "body-parser": "^1.20.0",
+    "busboy": "^1.6.0",
+    "bytes": "^3.1.2",
+    "compression": "^1.7.4",
+    "express-session": "^1.17.3",
+    "haluka-express": "git+https://github.com/haluker/haluka-express.git",
+    "helmet": "^5.1.0",
+    "lodash": "^4.17.21",
+    "youch": "^3.2.0",
+    "youch-terminal": "^2.1.4"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2",
+    "supertest": "^6.2.3"
   }
 }
