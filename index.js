@@ -39,7 +39,7 @@ exports.Ignite = async function (opts) {
 
                 const HttpDispatcher = opts.customDispatcher || require('./lib/http').default
                 const dispatcher = new HttpDispatcher(r, { path: haluka.controllersPath() })
-                let http = dispatcher.create(appData, _.get('httpConfig.timeout', opts))
+                let http = dispatcher.create(appData, _.get(opts, 'httpConfig.timeout'))
 
                 // Loading middlewares
                 if (opts.useRecommended)

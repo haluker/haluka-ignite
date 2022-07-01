@@ -8,16 +8,16 @@ const opts = {
     prettyBoot: false,
     bootMessage: false,
     appPath: './test/support',
-    appData: './test/support/app.js',
+    appData: 'app.js',
     // customDispatcher: {},
     httpConfig: {
-        sessionSecret: 'lol'
+        sessionSecret: 'lol',
     },
-    useRecommended: true,
+    useRecommended: false,
     // UserModel: {}
 }
 
-process.env.ENV_PATH = opts.appPath + '/.env'
+// process.env.ENV_PATH = opts.appPath + '/.env'
 
 test('ignite haluka app', (done) => {
     Blaze.Ignite(opts)
