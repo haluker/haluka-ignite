@@ -69,6 +69,8 @@ exports.Ignite = async function (opts) {
                 resolve(http)
             }
 
+            resolve()
+
         } catch (error) {
             new Youch(error, {})
                 .toJSON()
