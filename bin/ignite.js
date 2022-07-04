@@ -6,14 +6,14 @@ const fs = require('fs')
 
 process.env.ENV_PATH = '.env'
 
-let opts = fs.existsSync('ignite.config.js') ? require(process.cwd() + '/ignite.config.js') : 
-{
+let _default = {
     prettyBoot: true,
     bootMessage: true,
     useRecommended: true,
     httpConfig: 'haluka:config'
 }
-ignite(opts)
+let localOpts = fs.existsSync('ignite.config.js') ? require(process.cwd() + '/ignite.config.js') : {}
+ignite(Object.assign(_default, localOpts))
     .then(haluka => {
         let server = http.createServer(haluka)
         app().save('server', server)
