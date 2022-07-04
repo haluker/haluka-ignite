@@ -13,7 +13,8 @@ let _default = {
     httpConfig: 'haluka:config'
 }
 let localOpts = fs.existsSync('ignite.config.js') ? require(process.cwd() + '/ignite.config.js') : {}
-ignite(Object.assign(_default, localOpts))
+let opts = Object.assign(_default, localOpts)
+ignite(opts)
     .then(haluka => {
         let server = http.createServer(haluka)
         app().save('server', server)
