@@ -28,7 +28,7 @@ exports.Ignite = async function (opts) {
 
             // Database
             if (config('database'))
-                await haluka.use('Database').setupAll()
+                await haluka.use('Database', { MongooseConfig: config('database') }).setupAll()
 
             // Non-CLI Services
             if (!haluka.isCLI()) {
