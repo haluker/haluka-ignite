@@ -1,6 +1,6 @@
 {
   "name": "haluka-ignite",
-  "version": "1.0.8",
+  "version": "1.2.0",
   "description": "Haluka Project Igniter",
   "main": "index.js",
   "scripts": {

@@ -8,7 +8,6 @@ const Haluka = require('@haluka/core').Application
 const Router = require('@haluka/routing').Router
 
 exports.Ignite = async function (opts) {
-
 	
 	if (opts.prettyBoot == true)
 		console.clear()
@@ -40,6 +39,8 @@ exports.Ignite = async function (opts) {
                 const HttpDispatcher = opts.customDispatcher || require('./lib/http').default
                 const dispatcher = new HttpDispatcher(r, { path: haluka.controllersPath() })
                 let http = dispatcher.create(appData, _.get(opts, 'httpConfig.timeout'))
+
+                if (opts.httpHook && typeof(opts.httpHook) == 'function') opts.httpHook(http)
 
                 // Loading middlewares
                 if (opts.useRecommended)
