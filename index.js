@@ -18,7 +18,7 @@ exports.Ignite = async function (opts) {
     return new Promise(async (resolve, reject) => {
         try {
             let haluka = Haluka.getInstance(opts.appPath || './')
-            require('./lib/events.js')
+            require('./lib/events')
             // Loads all the event handlers from applciation
             eventLoader(haluka.eventsPath())
 
@@ -89,7 +89,7 @@ const eventLoader = (path) => {
     if (fs.existsSync(path)) {
         requireAll({
             dirname: path,
-            filter: /(.*)\.(js|ts)$/,
+            filter: /(.*)\.(js|ts|cjs)$/,
             excludeDirs: /^\.(git|svn)$/
         })
     }else {
