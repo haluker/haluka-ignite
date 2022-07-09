@@ -2,6 +2,7 @@ const fs = require('fs')
 const _ = require('lodash')
 const chalk = require('chalk')
 const Youch = require('youch')
+const requireAll = require('require-all')
 const forTerminal = require('youch-terminal')
 
 const Haluka = require('@haluka/core').Application
